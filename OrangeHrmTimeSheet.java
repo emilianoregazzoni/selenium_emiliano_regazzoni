@@ -20,19 +20,18 @@ public class OrangeHrmTimeSheet {
         timesheet.click();
     }
 
-    public void checkPageTitle(){
+    public String checkPageTitle(){
         String title = driver.getTitle();
-        Assert.assertEquals(title,"OrangeHRM");
+        return title;
     }
 
-    public void checkPageUrl(){
+    public String checkPageUrl(){
         String url = driver.getCurrentUrl();
-        Assert.assertEquals(url,"https://opensource-demo.orangehrmlive.com/index.php/time/viewEmployeeTimesheet");
+        return url;
     }
 
     public String showElements(){
         WebElement elements = driver.findElement(By.id("viewTimesheetForm"));
-
         return elements.getText().substring(30);
     }
 

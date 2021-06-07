@@ -32,12 +32,13 @@ public class OrangeHrmLoginPage {
         return div.getText(); //div.getLocation();
     }
 
-    public void quantityOptions(){
+    public int quantityOptionsMenuAvailable(){
         int q=0;
         WebElement div = driver.findElement(By.id("dashboard-quick-launch-panel-container"));
         List<WebElement> rows = driver.findElements(By.className("quickLaunge"));
         q = rows.size();
-        Assert.assertEquals(6,q); // 6 cantidad requerida q cantidad obtenida, valido
+        return q;
+      //  Assert.assertEquals(6,q); // 6 cantidad requerida q cantidad obtenida, valido
     }
 
 }
