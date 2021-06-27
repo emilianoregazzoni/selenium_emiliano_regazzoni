@@ -1,0 +1,8 @@
+<suite name ="Prueba Junio">
+    <test name="Ejercicios">
+        <classes>
+            <class name="pruebaJunio.PruebaNetflixTest">
+            </class>
+        </classes>
+    </test>
+</suite>
