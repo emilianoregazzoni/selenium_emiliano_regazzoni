@@ -4,24 +4,31 @@ Feature: Finding housing
 
     Given estoy en la pagina de inicio
     When ingreso una ciudad <ciudad>
-    And ingreso una llegada <llegada>
-    And ingreso una salida <salida>
-    And ingreso huespedes <huespedes>
+    And ingreso una fecha <fecha>
+    And ingreso huespedes
+    And presiono en buscar
     Then se muestran opciones de alojamiento
 
     Examples:
 
-      | ciudad    | llegada   | salida    | huespedes |
-      | "Colonia" | "13 oct." | "14 oct." | "3"       |
+      | ciudad    | fecha    |
+      | "Colonia" | "Semana" |
+
 
 
   Scenario Outline: Finding an experience
 
     Given estoy en experiencias
     When ingreso una ciudad <ciudad>
+    And presiono en buscar
     Then se muestran experiencias
 
     Examples:
 
       | ciudad     |
       | "Hamburgo" |
+
+    Scenario: Show near places
+
+      Given estoy en la pagina de inicio
+      Then veo lugares cercanos
